@@ -10,6 +10,31 @@
   </head>
 
   <body>
+   <header class="header">
+      <div class="header__bar row">
+        <h1 class="minititle"><a href="/">ShapePost</a></h1>
+        <div class="user_nav">
+           <span><%= "nickname" %>
+             <ul class="user_info">
+               <li>
+                <%= link_to "マイページ", "#" %>
+                <%= link_to "ログアウト", "#" %>
+               </li>
+             </ul>
+            </span>
+            <%= link_to "投稿する", "#", class: "post" %>
+          </div>
+          <div class="input_info">
+            <%= link_to "ログイン", "#", class: "post" %>
+            <%= link_to "新規登録", "#", class: "post" %>
+          </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <p>
+        Copyright ShapePost 2021.
+      </p>
+    </footer>
   </body>
 </html>

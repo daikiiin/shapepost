@@ -1,2 +1,7 @@
 <div class="full_screen">
+ <% @posts.each do |post| %>
+    <div class="content_post" style="background-image: url(<%= post.image %>);">
+      <p><%= post.name %></p>
+    </div>
+  <% end %>
 </div>

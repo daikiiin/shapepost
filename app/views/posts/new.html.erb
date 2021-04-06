@@ -1,0 +1,31 @@
+   <header class="posts--header"> 
+     <%= link_to image_tag('eye-940641__480.png' , size: '800x150'), "/" %>
+   </header>   
+   <div class="container">
+     <h3 class="post1">投稿する</h3>
+     <%= form_with model: @post, url: posts_path, local: true do |f| %>
+       <div class="name_upload">
+         <span class="indispensable">必須</span>
+         <%= f.text_field :name, placeholder: "Nickname" %>
+      </div>    
+      <div class="weight-bold-text">
+          商品の状態
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:training_status_id, TrainingStatus.all, :id, :name, {}, {class:"select-box", id:"posts--status"}) %>
+      <div class="explain_upload">
+         <span class="indispensable">必須</span>
+         <%= f.text_area :explain, placeholder: "explain" %>
+      </div>
+      <div class="click-upload">
+        <p class="submit-text">
+         写真を選択して投稿しよう！
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+      <div class="submit">
+      <%= f.submit "送信" %>
+      </div>
+    <% end %>
+   </div>
+ </header>

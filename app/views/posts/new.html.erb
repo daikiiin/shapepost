@@ -4,18 +4,24 @@
    <div class="container">
      <h3 class="post1">投稿する</h3>
      <%= form_with model: @post, url: posts_path, local: true do |f| %>
-       <div class="name_upload">
-         <span class="indispensable">必須</span>
-         <%= f.text_field :name, placeholder: "Nickname" %>
+       <div class="name_upload">     
+          <div class="weight-bold-text">
+             nickname
+             <span class="indispensable">必須</span>
+          </div>
+         <%= f.text_field :name %>
       </div>    
       <div class="weight-bold-text">
-          商品の状態
+          週の運動の頻度
         <span class="indispensable">必須</span>
       </div>
       <%= f.collection_select(:training_status_id, TrainingStatus.all, :id, :name, {}, {class:"select-box", id:"posts--status"}) %>
       <div class="explain_upload">
-         <span class="indispensable">必須</span>
-         <%= f.text_area :explain, placeholder: "explain" %>
+          <div class="weight-bold-text">
+             特に頑張ったこと！
+             <span class="indispensable">必須</span>
+          </div>
+        <%= f.text_area :explain %>
       </div>
       <div class="click-upload">
         <p class="submit-text">

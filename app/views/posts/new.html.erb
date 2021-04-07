@@ -1,37 +1,54 @@
    <header class="posts--header"> 
-     <%= link_to image_tag('eye-940641__480.png' , size: '800x150'), "/" %>
+     <%= link_to image_tag('eye-940641__480.png' , size: '1000x150'), "/" %>
    </header>   
-   <div class="container">
-     <h3 class="post1">投稿する</h3>
+      <h1 class="text-center text-warning text-monospace post1">投稿フォーム</h1>
+       <br>
+        <div class="border container-fruid " >
+        <br>
+        <div class="container">
      <%= form_with model: @post, url: posts_path, local: true do |f| %>
-       <div class="name_upload">     
-          <div class="weight-bold-text">
-             nickname
-             <span class="indispensable">必須</span>
-          </div>
-         <%= f.text_field :name %>
-      </div>    
-      <div class="weight-bold-text">
-          週の運動の頻度
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.collection_select(:training_status_id, TrainingStatus.all, :id, :name, {}, {class:"select-box", id:"posts--status"}) %>
-      <div class="explain_upload">
-          <div class="weight-bold-text">
-             特に頑張ったこと！
-             <span class="indispensable">必須</span>
-          </div>
-        <%= f.text_area :explain %>
-      </div>
-      <div class="click-upload">
-        <p class="submit-text">
-         写真を選択して投稿しよう！
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
-      </div>
-      <div class="submit">
-      <%= f.submit "送信" %>
-      </div>
+                    <div class="form-group">
+                        <label>NICKNAME：</label>
+                        <span class="indispensable">必須</span>
+                        <%= f.text_field :name, class:"form-control "%>
+                    </div>
+                    <div class="form-group">
+                        <label>週の運動の頻度：</label>
+                        <span class="indispensable">必須</span>
+                          <%= f.collection_select(:training_status_id, TrainingStatus.all, :id, :name, {}, {class:"select-box form-control ", id:"posts--status"}) %>
+                    </div>
+                    <div class="form-group">
+                        <label>写真を選択して投稿しよう!：</label>
+                        <%= f.file_field :image, id:"item-image" %>
+                        <span class="indispensable">必須</span>
+                    </div>
+                    <div class="form-group">
+                        <label>補足：特に習慣化できたこと！</label>
+                        <span class="indispensable">必須</span>
+                        <%= f.text_area :explain, class:"form-control"%>                   
+                   </div>
+            </div>
+        </div>
+                <div class="row center-block text-center">
+                <div class="col-1">
+                </div>
+                <div class="col-2">
+                  <%= link_to "閉じる" , "/" ,class:"btn btn-outline-secondary btn-block"%>
+               </div>
+               <div class="col-5">
+                  <%= f.submit "送信", class:"btn btn-outline-primary btn-block"%>
+               </div>
+               </div>
+               <div class="col-1">
+               </div>
+               <br>
+               <br>
+               <hr>
     <% end %>
-   </div>
- </header>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+

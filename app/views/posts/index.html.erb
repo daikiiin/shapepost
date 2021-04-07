@@ -1,7 +1,23 @@
 <div class="full_screen">
  <% @posts.each do |post| %>
-    <div class="content_post" style="background-image: url(<%= post.image %>);">
-      <p><%= post.name %></p>
-    </div>
+     <div class="d-inline-block">
+       <%= image_tag post.image.variant(resize: '350x450',rotate:25), class: "post-image" if post.image.attached?%>
+     <div class="card-body shadow post_name">
+      <%= post.name %>
+     <p class="card-text">
+      &#x2728;<%= "一週間の運動頻度" %>&#x2728;<%= post.training_status.name %>
+     <p class="card-text">
+      <%= post.explain%>
+     </p>
+     <a href="#" class="btn btn-primary">view mypage</a>
+     </div>
+  </div>
   <% end %>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </div>

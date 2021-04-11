@@ -1,0 +1,20 @@
+
+a { 
+ text-decoration: none;
+ color: rgb(71, 108, 145);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.minititle a {
+  display: flex;
+  justify-content:left;
+  color: aqua;
+  font-size: 150px;
+  font-family: 'Bangers', cursive;
+}
+

@@ -4,4 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :sex
+  belongs_to :training_status
+  belongs_to :training_goal
+
 end

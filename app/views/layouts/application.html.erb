@@ -28,11 +28,13 @@
           <%# </div> %> 
         <%# <% end %>
     <%= yield %>
-    <footer>
-      <p>
-        Copyright ShapePost 2021.
-      </p>
-    </footer>
+   <% if user_signed_in? %>
+     <footer>
+       <p>
+         Copyright ShapePost 2021.
+       </p>
+     </footer>
+   <% end %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -17,4 +17,13 @@ a {
   font-size: 150px;
   font-family: 'Bangers', cursive;
 }
-
+.h{
+  height: 120vh;
+  width: 100vw;
+}
+.login{
+  font-size: 50px;
+}
+.name{
+  width: 15%;
+}

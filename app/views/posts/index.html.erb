@@ -7,10 +7,10 @@
      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mt-2 mt-md-0">
            <li class="nav-item active">
-            <%= link_to "<nickname>", "#" ,class: "nav-link"%>
+            <%= link_to "#{current_user.nickname}さん", "#" ,class: "nav-link"%>
            </li>
            <li class="nav-item">
-             <%= link_to "ログアウト", "#" ,class: "nav-link"%>
+             <%= link_to "ログアウト", destroy_user_session_path , method: :delete, class: "nav-link"%>
           </li>
         </ul>
      </div>

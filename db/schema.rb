@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_055042) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
-    t.integer "hight", null: false
+    t.integer "height", null: false
     t.integer "weight", null: false
     t.integer "age", null: false
     t.integer "sex_id", null: false

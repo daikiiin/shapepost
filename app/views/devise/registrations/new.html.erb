@@ -49,12 +49,12 @@
       </div>
 
       <div>
-        <%= f.label :training_status %><br />
+        <%= f.label :currently_training_status %><br />
         <%= f.collection_select(:training_status_id, TrainingStatus.all, :id, :name, {}, {class:"select-box", id:"posts--status"}) %>
       </div>
 
       <div>
-        <%= f.label :training_goal %><br />
+        <%= f.label :training_goal_BMI %><br />
         <%= f.collection_select(:training_goal_id, TrainingGoal.all, :id, :name, {}, {class:"select-box", id:"posts--goal"}) %>
       </div>
 

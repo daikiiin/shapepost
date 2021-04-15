@@ -4,7 +4,8 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string     :name,                     null: false
       t.text       :explain,                  null: false
       t.integer    :training_status_id,       null: false
-
+      t.references :user,                     foreign_key: true
+      
       t.timestamps
     end
   end

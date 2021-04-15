@@ -6,32 +6,32 @@
 
      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mt-2 mt-md-0">
-           <li class="nav-item active">
-            <%= link_to "<nickname>", "#" ,class: "nav-link"%>
+           <li class="nav-item active ">
+            <%= link_to "#{current_user.nickname}さん", "#" ,class: "nav-link "%>
            </li>
            <li class="nav-item">
-             <%= link_to "ログアウト", "#" ,class: "nav-link"%>
+             <%= link_to "ログアウト", destroy_user_session_path , method: :delete, class: "nav-link"%>
           </li>
         </ul>
      </div>
       <%= link_to "posting your body", new_post_path ,class: "btn btn-primary btn-lg p-1 " %>
    </nav>
-<header class="header">
-  <h1 class="minititle" ><a href="/">ShapePost</a></h1>
-</header>
-<br>
-<div class="jumbotron">
+<header class="header jumbotron">
+  <h1 class="minititle"><a href="/">ShapePost</a></h1>
+<div >
   <h1 class="display-1">Hello, DiligentWorker!</h1>
   <p class="lead">Fitness is not about being better than someone else. It’s about being better than you used to be.</p>
   <hr class="my-2">
-  <p class="text">Change your life today. Don't gamble on the future act now without delay!</p>
+  <p class="text font-italic">Change your life today. Don't gamble on the future act now without delay!</p>
   <p>シモーヌ・ド・ボーヴォワール
-「今日、あなたの人生を変えなさい。将来に賭けてはいけません。グズグズせずに、今すぐ行動するのです」</p>
+「今日、あなたの人生を変えなさい。将来に賭けてはいけません。グズグズせずに、今すぐ行動するのです」</p>  <hr class="my-2">
+
   <br>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="https://www.cosmopolitan.com/jp/trends/lifestyle/g32046697/comforting-quotes-to-encourage-you-during-life-s-greatest-challenges34/" target="_blank" rel="noopener noreferrer" role="button">Some more</a>
   </p>
 </div>
+</header>
 <br>
 <br>
 <br>

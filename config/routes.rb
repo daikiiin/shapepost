@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
+    get '/users', to: redirect("/users/sign_up")
     authenticated :user do
       root :to => 'posts#index', as: :authenticated_root
     end

@@ -11,14 +11,12 @@ a {
 }
 
 .minititle a {
-  display: flex;
-  justify-content:left;
   color: aqua;
   font-size: 150px;
   font-family: 'Bangers', cursive;
 }
 .h{
-  height: 180vh;
+  height: 100vh;
   width: 100vw;
 }
 .login{
@@ -26,4 +24,8 @@ a {
 }
 .name{
   width: 15%;
+}
+
+.field_with_errors{
+  display: contents
 }

@@ -3,11 +3,12 @@
  <br>
 <h2 class="h-25 mb-3 text-monospace login">Sign up</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <%= devise_error_messages! %>
-
+      <div class="float-right text-danger">
+        <%= devise_error_messages! %>   
+      </div>   
       <div>
         <%= f.label :nickname %> <em>(12文字以内で入力してください)</em><br />
-        <%= f.text_field :nickname, autofocus: true, maxlength: "12" ,class:"name",placeholder:"Nickname"%>
+        <%= f.text_field :nickname, autofocus: true, maxlength: "12" ,class:"name clearfix",placeholder:"Nickname"%>
       </div>
 
       <div>

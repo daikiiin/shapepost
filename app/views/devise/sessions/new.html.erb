@@ -12,6 +12,7 @@
   <br>
    <div class="text-center">
      <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= devise_error_messages! %>     
       <div class="form-group row email_label">
         <%= f.label :email, class:"col-sm-2 col-form-label"%>
         <div class="col-sm-4">

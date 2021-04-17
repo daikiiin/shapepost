@@ -42,7 +42,7 @@
          <div class="dropdown">
             <button class="btn btn-info dropdown-toggle"
               type="button" id="dropdownMenu1" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">詳細
+              aria-haspopup="true" aria-expanded="false">編集
             </button>
           <div class="dropdown-menu " aria-labelledby="dropdownMenu1">
            <li>
@@ -62,7 +62,8 @@
       &#x1f447;<%= "この一週間特に意識したこと！"%><br>
       <%= post.explain%>
      </p>
-     <a href="#" class="btn btn-primary">view mypage</a>
+      <%= link_to 'view mypage', "#", class:"btn detail1"%>
+      <%= link_to '詳細ページ', "#", class:"btn detail2 text-white"%>
      </div>
    </div>
   <% end %>

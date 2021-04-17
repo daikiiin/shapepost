@@ -1,11 +1,11 @@
-   <nav class="navbar navbar-expand-lg shadow">
+   <nav class="navbar navbar-expand-lg shadow nav1 fixed-top ">
      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
      <a class="navbar-brand" href="/">Shapepost</a>
 
      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mt-2 mt-md-0">
+        <ul class="navbar-nav mt-2 mt-md-0 ">
            <li class="nav-item active ">
             <%= link_to "#{current_user.nickname}さん", "#" ,class: "nav-link "%>
            </li>
@@ -32,12 +32,11 @@
   </p>
 </div>
 </header>
-<br>
-<br>
+<p class="postitirann text-center">~post~</p>
 <br>
  <% @posts.each do |post| %>
-  <div class="d-inline-block">
-       <%= image_tag post.image.variant(resize: '290x400',rotate:25), class: "post-image" if post.image.attached?%>
+  <div class="sample-box-12 posts">
+       <%= image_tag post.image.variant(resize: '280x240'), class: "post-image" if post.image.attached?%>
        <%if current_user.id == post.user_id%>
          <div class="dropdown">
             <button class="btn btn-info dropdown-toggle"

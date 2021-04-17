@@ -7,6 +7,35 @@
 .detail1{
 background-color: #d3e0ea;
 }
+.post-image{
+
+  background: white;
+  padding: 10px 10px 40px;
+  -moz-box-shadow: 0 4px 10px #333; 
+  -webkit-box-shadow: 0 4px 10px #333;
+  box-shadow: 0 4px 10px #333;
+  transform: rotate(5deg);
+
+}
+.posts{
+  display: inline-flex;
+  justify-content: center;
+}
 .detail2{
   background-color: #e2bcb7;
+}
+.sample-box-12 {
+  border: 4px solid #82636b;
+  border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+  margin: 2em 0;
+  padding: 2em;
+}
+
+.postitirann{
+  font-family: 'Bangers', cursive;
+  font-size: 80px;
+  font-weight: bold;
+}
+.nav1{
+  background-color: #f8ede3;
 }

@@ -26,6 +26,12 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    post = Post.find(params[:id])
+    if post.destroy
+      redirect_to authenticated_root_path
+    end
+  end
 
   private
   def post_params

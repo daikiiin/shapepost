@@ -2,8 +2,9 @@
 <div class="font-weight-bold text-monospace shousai text-center"><%= "Detail" %></div>
 <br>
 <p class="text-center">
-  <%= image_tag @post.image.variant(resize: '600x600'), class: "post-image" if @post.image.attached?%>
+  <%= image_tag @post.image.variant(resize: '600x600') if @post.image.attached?%>
 </p>
+<br>
 <div class="card text-center shousai2 text-white">
   <div class="card-body">
     <h4 class="card-title">

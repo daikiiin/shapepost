@@ -32,6 +32,9 @@ class PostsController < ApplicationController
       redirect_to authenticated_root_path
     end
   end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   private
   def post_params

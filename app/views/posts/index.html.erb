@@ -41,16 +41,15 @@
        <%if current_user.id == post.user_id%>
          <div class="dropdown">
             <button class="btn btn-info dropdown-toggle"
-           type="button" id="dropdownMenu1" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-           詳細
-          </button>
+              type="button" id="dropdownMenu1" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">詳細
+            </button>
           <div class="dropdown-menu " aria-labelledby="dropdownMenu1">
            <li>
-             <%= link_to '編集', edit_post_path(post.id), class:"dropdown-item text-danger" %>
+             <%= link_to '編集', edit_post_path(post.id), class:"dropdown-item" %>
            </li>
            <li>
-             <%# <%= link_to '削除', , class:"dropdown-item", method: :delete %>
+             <%= link_to '削除', post_path(post.id), class:"dropdown-item text-danger", method: :delete %>
            </li>
           </div>
          </div>

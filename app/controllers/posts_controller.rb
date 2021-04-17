@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new ,:create,:edit, :update]
+  before_action :authenticate_user!, only: [:index, :new ,:create,:edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     @posts = Post.all.order(id: "DESC")
@@ -24,6 +24,12 @@ class PostsController < ApplicationController
       redirect_to authenticated_root_path
     else
       render :edit
+    end
+  end
+  def destroy
+    post = Post.find(params[:id])
+    if post.destroy
+      redirect_to authenticated_root_path
     end
   end
 

@@ -35,20 +35,35 @@
 <br>
 <br>
 <br>
-<div class="full_screen">
  <% @posts.each do |post| %>
-     <div class="d-inline-block">
-       <%= image_tag post.image.variant(resize: '350x450',rotate:25), class: "post-image" if post.image.attached?%>
+  <div class="d-inline-block">
+       <%= image_tag post.image.variant(resize: '290x400',rotate:25), class: "post-image" if post.image.attached?%>
+        <div class="dropdown">
+           <button class="btn btn-info dropdown-toggle"
+          type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          詳細
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+           <li>
+             <%= link_to '編集', edit_post_path(post.id), class:"dropdown-item" %>
+           </li>
+           <li>
+             <%# <%= link_to '削除', , class:"dropdown-item", method: :delete %>
+           </li>
+          </div>
+        </div>
      <div class="card-body shadow post_name">
       <%= post.name %>
+     <p class="card-text ">
+      &#x2728;<%= "今週の運動頻度" %>&#x2728;<%= post.training_status.name %>
      <p class="card-text">
-      &#x2728;<%= "一週間の運動頻度" %>&#x2728;<%= post.training_status.name %>
-     <p class="card-text">
+      &#x1f447;<%= "この一週間特に意識したこと！"%><br>
       <%= post.explain%>
      </p>
      <a href="#" class="btn btn-primary">view mypage</a>
      </div>
-  </div>
+   </div>
   <% end %>
 
     <!-- Optional JavaScript -->

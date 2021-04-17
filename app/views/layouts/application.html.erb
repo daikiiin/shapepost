@@ -19,18 +19,13 @@
 
   </head>
   <body>
-        <%# <% if user_signed_in? %> 
-        <%# <% else %> 
-          <%# <div class="user_info">
-            <%= link_to "ログイン", "#", class: "post" %>
-            <%# <%="・"%>
-            <%# <%= link_to "新規登録", "#", class: "post" %>
-          <%# </div> %> 
-        <%# <% end %>
     <%= yield %>
+    <br>
+    <br>
+    <br>
    <% if user_signed_in? %>
      <footer>
-       <p>
+       <p class="fixed bottom">
          Copyright ShapePost 2021.
        </p>
      </footer>

@@ -38,11 +38,12 @@
  <% @posts.each do |post| %>
   <div class="d-inline-block">
        <%= image_tag post.image.variant(resize: '290x400',rotate:25), class: "post-image" if post.image.attached?%>
-        <div class="dropdown">
-           <button class="btn btn-info dropdown-toggle"
-          type="button" id="dropdownMenu1" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          詳細
+       <%if current_user.id == post.user_id%>
+         <div class="dropdown">
+            <button class="btn btn-info dropdown-toggle"
+           type="button" id="dropdownMenu1" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+           詳細
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
            <li>
@@ -52,7 +53,8 @@
              <%# <%= link_to '削除', , class:"dropdown-item", method: :delete %>
            </li>
           </div>
-        </div>
+         </div>
+       <% end %>
      <div class="card-body shadow post_name">
       <%= post.name %>
      <p class="card-text ">

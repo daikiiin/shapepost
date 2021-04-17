@@ -45,9 +45,9 @@
            aria-haspopup="true" aria-expanded="false">
            詳細
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <div class="dropdown-menu " aria-labelledby="dropdownMenu1">
            <li>
-             <%= link_to '編集', edit_post_path(post.id), class:"dropdown-item" %>
+             <%= link_to '編集', edit_post_path(post.id), class:"dropdown-item text-danger" %>
            </li>
            <li>
              <%# <%= link_to '削除', , class:"dropdown-item", method: :delete %>

@@ -16,19 +16,19 @@
      </div>
 </nav>
   
-   <header class="posts--header"> 
-     <%= link_to image_tag('eye-940641__480.png' , size: '1000x150'), "/" %>
-   </header>   
-      <h1 class="text-center text-warning text-monospace post1">投稿フォーム</h1>
+<header class="posts--header"> 
+  <%= link_to image_tag('eye-940641__480.png' , size: '1000x150'), "/" %>
+</header>   
+    <h1 class="text-center text-warning text-monospace post1">投稿フォーム</h1>
        <br>
-        <div class="border container-fruid " >
-        <br>
-        <div class="container">
-     <%= form_with model: @post, url: posts_path, local: true do |f| %>
+         <%= form_with model: @post, url: posts_path, local: true do |f| %>
+            <div class="border container-fruid " >
+             <br>
+               <div class="container">
                     <div class="form-group">
                         <label>NICKNAME：</label>
                         <span class="indispensable">必須</span>
-                        <%= f.text_field :name, class:"form-control "%>
+                        <%= f.text_field :name, class:"form-control"%>
                     </div>
                     <div class="form-group">
                         <label>週の運動の頻度：</label>
@@ -46,8 +46,8 @@
                         <span class="indispensable">必須</span>
                         <%= f.text_area :explain, class:"form-control"%>                   
                    </div>
+                 </div>
             </div>
-        </div>
                 <div class="row center-block text-center">
                 <div class="col-1">
                 </div>
@@ -55,7 +55,7 @@
                   <%= link_to "閉じる" , "/" ,class:"btn btn-outline-secondary btn-block"%>
                </div>
                <div class="col-5">
-                  <%= f.submit "送信", class:"btn btn-outline-primary btn-block"%>
+                  <%= f.submit "送信", class:"btn btn-outline-primary btn-block" %>
                </div>
                </div>
                <div class="col-1">
@@ -63,7 +63,7 @@
                <br>
                <br>
                <hr>
-    <% end %>
+        <% end %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

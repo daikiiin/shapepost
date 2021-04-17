@@ -63,7 +63,7 @@
       <%= post.explain%>
      </p>
       <%= link_to 'view mypage', "#", class:"btn detail1"%>
-      <%= link_to '詳細ページ', "#", class:"btn detail2 text-white"%>
+      <%= link_to '詳細ページ', post_path(post.id), class:"btn detail2 text-white"%>
      </div>
    </div>
   <% end %>

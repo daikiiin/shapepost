@@ -1,0 +1,24 @@
+<body class="shousai-full">
+<div class="font-weight-bold text-monospace shousai text-center"><%= "Detail" %></div>
+<br>
+<p class="text-center">
+  <%= image_tag @post.image.variant(resize: '600x600'), class: "post-image" if @post.image.attached?%>
+</p>
+<div class="card text-center shousai2 text-white">
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= "投稿者" %>
+      <%= link_to "#{@post.user.nickname}", "#",class:"text-white"%>
+    </h4>
+    <br>
+    <p class="card-text">
+      <p>習慣化できたこと!</p>
+      <%= @post.explain %>
+    </p>
+    <br>
+    <p class="card-text">
+      <p>今週の運動頻度！！</p>
+      <%= @post.training_status.name %>
+    </p>
+</div>
+</body>

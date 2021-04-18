@@ -30,3 +30,14 @@ a {
 .field_with_errors{
   display: contents
 }
+.polaroid{
+  display: block; 
+  margin: 0 auto;
+  background: white; 
+  padding: 10px 10px 30px; 
+  -moz-box-shadow: 0 4px 10px #333; 
+  -webkit-box-shadow: 0 4px 10px #333;
+}
+.userinfo{
+  
+}

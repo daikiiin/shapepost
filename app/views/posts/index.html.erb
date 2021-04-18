@@ -7,7 +7,7 @@
      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mt-2 mt-md-0 ">
            <li class="nav-item active ">
-            <%= link_to "#{current_user.nickname}さん", "#" ,class: "nav-link "%>
+            <%= link_to "#{current_user.nickname}さん", user_path(current_user.id) ,class: "nav-link "%>
            </li>
            <li class="nav-item">
              <%= link_to "ログアウト", destroy_user_session_path , method: :delete, class: "nav-link"%>
@@ -61,7 +61,7 @@
       &#x1f447;<%= "この一週間特に意識したこと！"%><br>
       <%= post.explain%>
      </p>
-      <%= link_to 'view mypage', "#", class:"btn detail1"%>
+      <%= link_to 'view mypage', user_path(post.user_id), class:"btn detail1"%>
       <%= link_to '詳細ページ', post_path(post.id), class:"btn detail2 text-white"%>
      </div>
    </div>

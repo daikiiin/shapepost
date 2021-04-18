@@ -1,0 +1,18 @@
+<body class="userinfo-full">
+ <div class="text-center">
+   <h1><%= "#{@nickname}のページ"%>
+   <br>
+   <br>
+   <p class=""><%= @nickname %>さんの投稿一覧</p>
+ </div>
+ <br>
+ <div class="polaroids">
+    <% @posts.each do |post| %>
+     <div class="polaroid d-inline-block">
+       <%= image_tag post.image.variant(resize: '300x300') if post.image.attached?%>
+       <p class="userinfo"><%= post.name %></p>
+       <p class="userinfo"><%= post.explain %></p>
+     </div>
+    <% end %>
+  </div>
+</body>

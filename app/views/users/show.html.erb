@@ -1,18 +1,28 @@
-<body class="userinfo-full">
- <div class="text-center">
-   <h1><%= "#{@nickname}のページ"%>
-   <br>
-   <br>
+<body class="userinfo-full ">
+ <div class="page-info">
+   <h1><%= "MYPAGE"%></h1>
    <p class=""><%= @nickname %>さんの投稿一覧</p>
  </div>
  <br>
- <div class="polaroids">
-    <% @posts.each do |post| %>
-     <div class="polaroid d-inline-block">
+ <% @posts.each do |post| %>
+   <div class="sample_box11 d-inline-block">
+     <div class="border border-dark">
        <%= image_tag post.image.variant(resize: '300x300') if post.image.attached?%>
-       <p class="userinfo"><%= post.name %></p>
-       <p class="userinfo"><%= post.explain %></p>
      </div>
-    <% end %>
+       <p class="userinfo"><%= post.name %></p>
+       <br>
+       <p class="shadow">今週の運動頻度！！</p>
+       <%= post.training_status.name %>
+       <br>
+       <br>
+       <p class="userinfo">
+          <p class="shadow">習慣化できたこと!</p>
+          <p><%= post.explain %></p>
+       </p>
+       <%= link_to '詳細ページ', post_path(post.id), class:"btn detail4 text-white float-right"%>
+    </div>
+ <% end %> 
+ <div class="text-right">
+   <%= link_to "閉じる" , "/" ,class:"btn btn-outline-dark btn-sm active"%>
   </div>
 </body>

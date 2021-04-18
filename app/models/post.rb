@@ -11,5 +11,5 @@ class Post < ApplicationRecord
     validates :explain   
     validates :image        
   end
-  validates :training_status_id, numericality: { other_than: 1 }
+  validates :training_status_id, numericality: { other_than: 1, message:'を選択して下さい' }
 end

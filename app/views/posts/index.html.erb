@@ -14,7 +14,7 @@
           </li>
         </ul>
      </div>
-      <%= link_to "posting your body", new_post_path ,class: "btn btn-primary btn-lg p-1 " %>
+      <%= link_to "posting your body", new_post_path ,class: "btn btn-primary btn-lg p-1 " , data: {"turbolinks" => false} %>
    </nav>
 <header class="header jumbotron">
   <h1 class="minititle"><a href="/">ShapePost</a></h1>
@@ -66,7 +66,7 @@
      </div>
    </div>
   <% end %>
-
+  <div class='float-right page-item '><%= paginate @posts %></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

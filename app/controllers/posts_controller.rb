@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new ,:create,:edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
-    @posts = Post.includes(:user).order(id: "DESC")
+    @posts = Post.page(params[:page]).per(5).includes(:user).order(id: "DESC")
   end
   def new
     @post = Post.new

@@ -5,7 +5,7 @@
   font-size: 50px;
   font-weight: bold;
   font-family: "Nico Moji";
-  color: #faf3e0;
+  color: #7d7d7d;
   margin-bottom: 1vh;
   margin-right: 8vw;
 }
@@ -47,7 +47,7 @@
   width: 120%;
   height: 70%;
   margin: 10% -10% 0;
-  background: #eabf9f;
+  background: #ffefe0;
   -webkit-transform-origin: left center;
   -ms-transform-origin: left center;
   transform-origin: left center;
@@ -70,7 +70,7 @@
   width: 120%;
   height: 20%;
   margin: 5% -5% 0;
-  background: #2b2825;
+  background: #fed9ca;
   -webkit-transform-origin: left center;
   -ms-transform-origin: left center;
   transform-origin: left center;
@@ -80,5 +80,5 @@
   z-index: -2;
 }
 .bg-color{
-  background-color: #f9ffea;
+  background-color: #7d7d7d;
 }

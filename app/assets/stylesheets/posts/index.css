@@ -17,10 +17,6 @@ background-color: #d3e0ea;
   transform: rotate(5deg);
 
 }
-.posts{
-  display: inline-flex;
-  justify-content: center;
-}
 .detail2{
   background-color: #e2bcb7;
 }
@@ -33,9 +29,14 @@ background-color: #d3e0ea;
 
 .postitirann{
   font-family: 'Bangers', cursive;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: bold;
 }
 .nav1{
   background-color: #f8ede3;
+}
+.page{
+  display: flex;
+  justify-content: center;
+  margin:0 auto;
 }

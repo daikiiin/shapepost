@@ -1,4 +1,4 @@
-   <nav class="navbar navbar-expand-lg shadow nav1 fixed-top ">
+   <nav class="navbar navbar-expand shadow nav1 fixed-top ">
      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
@@ -14,9 +14,9 @@
           </li>
         </ul>
      </div>
-      <%= link_to "posting your body", new_post_path ,class: "btn btn-primary btn-lg p-1 " , data: {"turbolinks" => false} %>
+      <%= link_to "Posting Your Body", new_post_path ,class: "btn btn-primary btn-lg p-1 " , data: {"turbolinks" => false} %>
    </nav>
-<header class="header jumbotron">
+<header class="header jumbotron shadow-lg">
   <h1 class="minititle"><a href="/">ShapePost</a></h1>
 <div class="container font-weight-bold">
   <h1 class="display-1 font-weight-bold">Hello, DiligentWorker!!</h1>
@@ -36,8 +36,10 @@
 <p class="postitirann text-center">〜POST〜</p>
 <p class="postitirann text-center">Anyone who has never made a mistake has never tried anything new. &#x2714;</p>
 <br>
+<br>
+<br>
  <% @posts.each do |post| %>
-  <div class="sample-box-12 d-inline-block shadow-lg ">
+  <div class="sample-box-12 d-inline-flex shadow-lg">
        <%= image_tag post.image.variant(resize: '250x260'), class: "post-image" if post.image.attached?%>
        <%if current_user.id == post.user_id%>
          <div class="dropdown">

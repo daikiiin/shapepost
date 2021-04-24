@@ -12,6 +12,10 @@ a {
   color: #8ab6d6;
   font-size: 150px;
   font-family: 'Bangers', cursive;
+  display: none;
+}
+.worker{
+  display: none;
 }
 
 .h{

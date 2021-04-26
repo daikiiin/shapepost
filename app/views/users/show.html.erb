@@ -1,0 +1,49 @@
+<body class="userinfo-full ">
+ <div class="page-info">
+   <h1><%= "MYPAGE"%></h1>
+   <p><%= @nickname %>さんの投稿一覧</p>
+   <p class="page-profile">PROFILE</p>
+   <div class="container profile">
+     <small>身長</small>
+      <i><%= "#{@height}cm" %></i>
+      <i>/</i>
+     <small>体重</small>
+      <i><%= "#{@weight}kg" %></i>
+      <i>/</i>
+     <small>年齢</small>
+      <i><%= @age %></i>
+      <i>/</i>
+     <small>性別</small>
+      <i><%= @user_sex.name %></i>
+      <i>/</i>
+     <small>目標BMI値</small>
+      <i><%= @user_goal.name %></i>
+   </div>
+ </div>
+ <br>
+ <% @posts.each do |post| %>
+   <div class="sample_box11 d-inline-block">
+     <div class="border border-dark">
+       <%= image_tag post.image.variant(resize: '300x300') if post.image.attached?%>
+     </div>
+       <p class="userinfo"><%= post.name %></p>
+       <br>
+       <p class="shadow">今週の運動頻度！！</p>
+       <%= post.training_status.name %>
+       <br>
+       <br>
+       <p class="userinfo">
+          <p class="shadow">習慣化できたこと!</p>
+          <p><%= post.explain %></p>
+       </p>
+       <p class="userinfo">
+          <p class="shadow">投稿日</p>
+          <p><%= post.created_at.strftime("%Y年%m月%d日")%></p>
+       </p>
+       <%= link_to '詳細ページ', post_path(post.id), class:"btn detail4 text-white float-right"%>
+    </div>
+ <% end %> 
+ <div class="text-right">
+   <%= link_to "閉じる" , "/" ,class:"btn btn-outline-dark btn-sm active"%>
+  </div>
+</body>

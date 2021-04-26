@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new ,:create,:edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
-    @posts = Post.all.order(id: "DESC")
+    @posts = Post.page(params[:page]).per(8).includes(:user).order(id: "DESC")
   end
   def new
     @post = Post.new
@@ -31,6 +31,11 @@ class PostsController < ApplicationController
     if post.destroy
       redirect_to authenticated_root_path
     end
+  end
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   private

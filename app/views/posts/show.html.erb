@@ -1,0 +1,54 @@
+<body class="shousai-full">
+<div class="font-weight-bold text-monospace shousai text-center"><%= "Detail" %></div>
+ <div class="text-center">
+ <%= "投稿日"%><br>
+ <%= @post.created_at.strftime("%Y年%m月%d日")%>
+ </div>
+<br>
+<p class="text-center">
+  <%= image_tag @post.image.variant(resize: '600x600') if @post.image.attached?%>
+</p>
+<br>
+<div class="card text-center shousai2 text-white">
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= "投稿者" %>
+      <%= link_to "#{@post.user.nickname}", "#",class:"text-white"%>
+    </h4>
+    <br>
+    <p class="card-text">
+      <p>習慣化できたこと!</p>
+      <%= @post.explain %>
+    </p>
+    <br>
+    <p class="card-text">
+      <p>今週の運動頻度！！</p>
+      <%= @post.training_status.name %>
+    </p>
+    <br>
+     <p class="card-text">
+       <%= link_to "閉じる" , "/" ,class:"btn btn-outline-light btn-sm "%>
+     </p>
+</div>
+ <div class="container col-4"> 
+    <% if user_signed_in? %>
+      <%= form_with(model: [@post, @comment], local: true) do |f| %>
+        <%= f.text_area :text, placeholder: "コメントする", rows: "2" ,class:"form-control"%>
+        <%= f.submit "送信" ,class:" btn btn-success input-group-append float-right"%>
+      <% end %>
+    <% else %>
+      <strong><p>/// コメントの投稿には新規登録/ログインが必要です ///</p></strong>
+    <% end %>
+    <br>
+    <br>
+    <div class="container">
+      <h4 class="font-weight-bold">＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" ,class:"text-white"%>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
+ </div>
+</body>

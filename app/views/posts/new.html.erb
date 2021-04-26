@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg shadow">
+<nav class="navbar navbar-expand shadow nav1 fixed-top">
      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
@@ -15,16 +15,15 @@
         </ul>
      </div>
 </nav>
-  
+<div class="bg-color">
 <header class="posts--header"> 
-  <%= link_to image_tag('eye-940641__480.png' , size: '1000x150'), "/" %>
 </header>   
-    <h1 class="text-center text-warning text-monospace post1">投稿フォーム</h1>
-       <br>
          <%= form_with model: @post, url: posts_path, local: true do |f| %>
-            <div class="border container-fruid " >
-             <br>
+            <div class="container-fruid  contents contentsdouble " >
+               <br>
                <div class="container">
+                    <h1 class="post1">Post On!</h1>
+                    <br>
                     <div class="form-group">
                         <label>NICKNAME：</label>
                         <span class="indispensable">必須</span>
@@ -46,25 +45,27 @@
                         <span class="indispensable">必須</span>
                         <%= f.text_area :explain, class:"form-control"%>                   
                    </div>
+                   <div class="text-center">
+                        <label class="post2">最近の投稿から一週間経ったら投稿してね！</label>
+                   </div>
                  </div>
             </div>
-                <div class="row center-block text-center">
-                <div class="col-1">
+        </div>
+        <br>
+        <br>
+        <br>
+                <div class="row center-block text-center bg-5">
+                  <div class="col-1">
+                  </div>
+                  <div class="col-2">
+                     <%= link_to "閉じる" , "/" ,class:"btn btn-outline-secondary btn-block"%>
+                  </div>
+                  <div class="col-5">
+                     <%= f.submit "送信", class:"btn btn-outline-primary btn-block"  %>
+                  </div>
+                  </div>
                 </div>
-                <div class="col-2">
-                  <%= link_to "閉じる" , "/" ,class:"btn btn-outline-secondary btn-block"%>
-               </div>
-               <div class="col-5">
-                  <%= f.submit "送信", class:"btn btn-outline-primary btn-block" %>
-               </div>
-               </div>
-               <div class="col-1">
-               </div>
-               <br>
-               <br>
-               <hr>
         <% end %>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

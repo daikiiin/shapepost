@@ -5,16 +5,19 @@ a {
 }
 
 .header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  width: 100vw;
+  background: linear-gradient(45deg, #fbe0c4 0%, #8ab6d6 100%);
 }
-
 .minititle a {
-  color: aqua;
+  color: #8ab6d6;
   font-size: 150px;
   font-family: 'Bangers', cursive;
+  display: none;
 }
+.worker{
+  display: none;
+}
+
 .h{
   height: 100vh;
   width: 100vw;
@@ -28,4 +31,37 @@ a {
 
 .field_with_errors{
   display: contents
+}
+.userinfo-full{
+  width: 100vw;
+  height: 100%;
+  background-image: url(zebrawood-768x576.png);
+
+}
+.sample_box11 {
+
+  background: white;
+  padding: 10px 10px 40px;
+  -moz-box-shadow: 0 4px 10px #333; 
+  -webkit-box-shadow: 0 4px 10px #333;
+  box-shadow: 0 4px 40px #333;
+  transform: rotate(5deg);
+
+}
+.page-info{
+  font-size: 80px;
+  font-family: 'Bangers', cursive;
+  color: #faf3e0;
+}
+.userinfo{
+  font-size: 25px;
+}
+.detail4{
+  background-color: #a1cae2;
+}
+.profile{
+  font-size: 35px;
+}
+.page-profile{
+  font-size: 40px;
 }

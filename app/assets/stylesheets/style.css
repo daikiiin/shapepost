@@ -42,6 +42,12 @@ a {
   transform: rotate(5deg);
 
 }
+.i{
+  font-size: 25px;
+  color: #faf3e0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
 .page-info{
   font-size: 80px;
   font-family: 'Bangers', cursive;

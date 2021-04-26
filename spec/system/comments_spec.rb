@@ -8,11 +8,7 @@ RSpec.describe "Comments", type: :system do
 
   it 'ログインしたユーザーは詳細ページでコメント投稿できる' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'Email', with: @post.user.email
-    fill_in 'Password', with: @post.user.password
-    find('input[name="commit"]').click
-    expect(current_path).to eq(authenticated_root_path)
+    sign_in(@post.user)
     # ツイート詳細ページに遷移する
     find_link("詳細ページ", href: post_path(@post)).click
     # フォームに情報を入力する

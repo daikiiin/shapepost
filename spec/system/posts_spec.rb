@@ -9,11 +9,7 @@ RSpec.describe "Posts", type: :system do
   context '投稿ができるとき'do
   it 'ログインしたユーザーは新規投稿できる' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
-    find('input[name="commit"]').click
-    expect(current_path).to eq(authenticated_root_path)
+    sign_in(@user)    
     # 新規投稿ページへのリンクがあることを確認する
     expect(page).to have_content('Posting Your Body')
     # 投稿ページに移動する
@@ -60,11 +56,7 @@ RSpec.describe '編集', type: :system do
   context '編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿したものの編集ができる' do
       # 投稿1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(authenticated_root_path)
+      sign_in(@post1.user)
       # 投稿1に「編集」ボタンがあることを確認する
       find(".dropdown-toggle").click
       # 編集画面に移動
@@ -101,11 +93,7 @@ RSpec.describe '編集', type: :system do
   context '編集ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿したものの編集画面には遷移できない' do
       # 投稿1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(authenticated_root_path)
+      sign_in(@post1.user)
       # 投稿2に「編集」ボタンがないことを確認する
       expect(
         all('.dropdown')[0].hover
@@ -126,11 +114,7 @@ RSpec.describe '削除', type: :system do
   context '削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿したツイートの削除ができる' do
       # 1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(authenticated_root_path)
+      sign_in(@post1.user)
       # 「削除」ボタンがあることを確認する
       find(".dropdown-toggle").click
       # 投稿を削除するとレコードの数が1減ることを確認する
@@ -158,11 +142,7 @@ RSpec.describe '削除', type: :system do
   context '削除ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿したものの削除ができない' do
       # 投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'Email', with: @post1.user.email
-      fill_in 'Password', with: @post1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(authenticated_root_path)
+      sign_in(@post1.user)
       # 投稿2に「削除」ボタンが無いことを確認する
       expect(
         all('.dropdown')[0].hover
@@ -182,11 +162,7 @@ RSpec.describe '詳細', type: :system do
   end
   it 'ログインしたユーザーは詳細ページに遷移してコメント投稿欄が表示される' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'Email', with: @post.user.email
-    fill_in 'Password', with: @post.user.password
-    find('input[name="commit"]').click
-    expect(current_path).to eq(authenticated_root_path)
+    sign_in(@post.user)
     # 詳細画面に移動
     find_link("詳細ページ", href: post_path(@post)).click
     # 詳細ページにツイートの内容が含まれている
@@ -210,11 +186,7 @@ RSpec.describe 'マイページ', type: :system do
   end
   it 'ログインしたユーザーは詳細ページに遷移してコメント投稿欄が表示される' do
     # ログインする
-    visit new_user_session_path
-    fill_in 'Email', with: @post.user.email
-    fill_in 'Password', with: @post.user.password
-    find('input[name="commit"]').click
-    expect(current_path).to eq(authenticated_root_path)
+    sign_in(@post.user)
     # 詳細画面に移動
     find(".detail1").click
     # 詳細ページにツイートの内容が含まれている

@@ -23,13 +23,13 @@
 [![Image from Gyazo](https://i.gyazo.com/d81e2bde2eb131866ac1ca3c8eb2f731.png)](https://gyazo.com/d81e2bde2eb131866ac1ca3c8eb2f731)
 
 ## 投稿画面
-[![Image from Gyazo](https://i.gyazo.com/3bff7ef39603fb1100866811baabaf11.png)](https://gyazo.com/3bff7ef39603fb1100866811baabaf11)
+[![Image from Gyazo](https://i.gyazo.com/e3045b7666092c7ae14fed4f390f79f9.png)](https://gyazo.com/e3045b7666092c7ae14fed4f390f79f9)
 ## 投稿表示画面
-[![Image from Gyazo](https://i.gyazo.com/1d6e63c82faae16555c2c895449faab8.jpg)](https://gyazo.com/1d6e63c82faae16555c2c895449faab8)
+[![Image from Gyazo](https://i.gyazo.com/29a24634201358b8a230a3b70129dfbe.jpg)](https://gyazo.com/29a24634201358b8a230a3b70129dfbe)
 ## 詳細画面
-[![Image from Gyazo](https://i.gyazo.com/6980cfca11f22850794aa358d2bbd156.jpg)](https://gyazo.com/6980cfca11f22850794aa358d2bbd156)
+[![Image from Gyazo](https://i.gyazo.com/c3db5406f6d6fe0cd2397f70e352e53c.png)](https://gyazo.com/c3db5406f6d6fe0cd2397f70e352e53c)
 ## マイページ画面
-[![Image from Gyazo](https://i.gyazo.com/32b2194c25aa36d7d5a02bfe518a640b.jpg)](https://gyazo.com/32b2194c25aa36d7d5a02bfe518a640b)
+[![Image from Gyazo](https://i.gyazo.com/1c0a5e8b1117eedab94b5100242f7661.jpg)](https://gyazo.com/1c0a5e8b1117eedab94b5100242f7661)
 
 # 🔥 Features
 * devise scopeを使いトップページをログイン画面にすることで多少の匿名性向上

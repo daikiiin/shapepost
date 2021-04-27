@@ -61,9 +61,9 @@
       <%= post.name %>
      <p class="card-text ">
       &#x2728;<%= "今週の運動頻度" %>&#x2728;<%= post.training_status.name %>
-     <p class="card-text">
+     <p class="card-text ">
       &#x1f447;<%= "この一週間特に意識したこと！"%><br>
-      <%= post.explain%>
+       <%= simple_format(post.explain)%>
      </p>
      <p class="card-text">
        <%= "投稿日"%><br>
